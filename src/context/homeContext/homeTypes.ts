@@ -5,8 +5,6 @@ export interface HomeStateProps {
 }
 
 export interface Banner {
-  id: number;
-  name: string;
   description: string;
   visibility: number;
   link: string;
@@ -18,6 +16,6 @@ export interface HomeContextType {
   getBanners: () => Promise<void>; 
   getABanner: (id:number) => Promise<void>; 
   editBanner: (bannerId: number, updatedBanner: Banner) => Promise<void>; 
-  banners: Banner[] | undefined;
-  banner: Banner | undefined ;
+  banners: Banner[];
+  banner: Banner;
 }

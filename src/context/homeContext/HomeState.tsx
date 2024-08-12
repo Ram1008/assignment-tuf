@@ -4,8 +4,15 @@ import { HomeContextType, Banner } from './homeTypes';
 const HomeContext = createContext<HomeContextType | undefined>(undefined);
 
 export const HomeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [banners, setBanners] = useState<Banner[]>();
-  const [banner, setBanner] = useState<Banner | undefined>();
+  const initialBanner = {
+    description: "",
+    visibility: 0,
+    link: "",
+    image: "",
+    timer: 0,
+  }
+  const [banners, setBanners] = useState<Banner[]>([]);
+  const [banner, setBanner] = useState<Banner>(initialBanner);
   const host = 'https://banner-production-92a3.up.railway.app/api';
   
   const fetchApi = async (url: string, method: string, body: unknown = null, requireToken = false) => {
@@ -25,10 +32,10 @@ export const HomeProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         status: response.ok,
         data: json,
       };
-    } catch (error: unknown) {
+    } catch (error) {
       return {
         status: false,
-        message: `Error fetching API: ${error.message || error}`,
+        message: `Error fetching API: ${error }`,
       };
     }
   };
