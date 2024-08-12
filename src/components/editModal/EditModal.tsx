@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import './editModal.scss';
 
 type Banner = {
-  id: number;
-  name: string;
   description: string;
   visibility: number;
   link: string;
   timer: number;
+  image: string;
 };
 
 type EditBannerModalProps = {
@@ -75,7 +74,7 @@ const EditBannerModal: React.FC<EditBannerModalProps> = ({ banner, onClose, onSa
     <div className="modal__overlay" onClick={onClose}>
       <div className="modal__container" onClick={(e) => e.stopPropagation()}>
         <div className="modal__header">
-          <h2>Edit Banner: {updatedBanner.name}</h2>
+          <h2>Edit Banner</h2>
           <button className="close-btn" onClick={onClose}>&times;</button>
         </div>
         <div className="modal__body">
@@ -86,7 +85,7 @@ const EditBannerModal: React.FC<EditBannerModalProps> = ({ banner, onClose, onSa
           <label>
             Visibility:
             <input 
-              // className="switch" 
+              className="switch" 
               type="checkbox" 
               name="visibility" 
               value={updatedBanner.visibility}

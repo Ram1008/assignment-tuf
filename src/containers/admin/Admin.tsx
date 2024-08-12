@@ -30,7 +30,7 @@ const Admin = () => {
 
   const handleEditBanner = async (updatedBanner: Banner) => {
     if (selectedBanner) {
-      await editBanner(selectedBanner.id, updatedBanner);
+      await editBanner(1, updatedBanner);
       handleCloseModal();
     }
   };
