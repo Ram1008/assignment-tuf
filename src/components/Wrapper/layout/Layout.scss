@@ -1,0 +1,62 @@
+@import '../../../mixins';
+
+.layout__container{
+    @include flex-container(row, flex-start, center);
+    padding: 0.5rem;
+    box-sizing: border-box;
+    gap: 1rem;
+    height: 100vh;
+}
+.layout__header{
+    @include flex-container(column, flex-start, center);
+    width: 15%;
+    height: 100%;
+    background-color: var(--tertiary-color);
+    @include shadow();
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+
+    .app__header-logo{
+        height: 80px;
+        width: 80px;
+        @include rounder-border(white, 50%);
+        @include backgroundImage('../../../assets/Logo.png');
+    }
+
+}
+.layout__body{
+    @include flex-container(column, flex-start, center);
+    height: 100%;
+    width: 85%;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    .layout__body-header {
+        @include flex-container(row, space-between, center);
+        width: 100%;
+    
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            font-style: italic;
+          }
+    
+        button {
+            height: 3rem;
+            padding: 1rem 3rem;
+            box-sizing: border-box;
+            @include rounder-border(var(--secondary-color), 10px);
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-size: 15px;
+        }
+    }
+    hr {
+        background-color: var(--tertiary-color);
+        height: 1px; /* Set height for visibility */
+        border: none; /* Remove border */
+        width: 100%; /* Make sure it spans the entire container */
+        margin: 1rem 0; /* Add some space around the hr */
+      }
+    
+}

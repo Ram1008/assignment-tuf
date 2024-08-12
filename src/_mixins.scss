@@ -1,0 +1,26 @@
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin backgroundImage($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin gradient-div($color1, $color2) {
+  background: linear-gradient(to bottom, $color1, $color2 50%, $color1 100%);
+}
+
+@mixin rounder-border($color: transparent, $bR: 0) {
+  border: 1px solid $color;
+  border-radius: $bR;
+}
+
+@mixin shadow($color: rgba(0, 0, 0, 0.24), $offsetX: 0px, $offsetY: 3px, $blur: 8px) {
+  box-shadow: $color $offsetX $offsetY $blur;
+}

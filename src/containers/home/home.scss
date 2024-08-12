@@ -1,0 +1,18 @@
+@import '../../mixins';
+
+.home__container{
+    @include flex-container(row, flex-start, flex-start);
+    @include rounder-border(white, 10px);
+    gap: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    .home__container_button{
+        padding: 0.5rem 1.5rem;
+        color: red;
+        @include rounder-border(red, 5px);
+        box-sizing: border-box;
+        background-color: white;
+    }
+}
