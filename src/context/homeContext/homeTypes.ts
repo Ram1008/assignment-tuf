@@ -19,5 +19,5 @@ export interface HomeContextType {
   getABanner: (id:number) => Promise<void>; 
   editBanner: (bannerId: number, updatedBanner: Banner) => Promise<void>; 
   banners: Banner[] | undefined;
-  banner: Banner | null;
+  banner: Banner | undefined ;
 }

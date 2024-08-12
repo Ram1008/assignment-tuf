@@ -5,7 +5,7 @@ const HomeContext = createContext<HomeContextType | undefined>(undefined);
 
 export const HomeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [banners, setBanners] = useState<Banner[]>();
-  const [banner, setBanner] = useState<Banner | null>(null);
+  const [banner, setBanner] = useState<Banner | undefined>();
   const host = 'https://banner-production-92a3.up.railway.app/api';
   
   const fetchApi = async (url: string, method: string, body: unknown = null, requireToken = false) => {
@@ -25,7 +25,7 @@ export const HomeProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         status: response.ok,
         data: json,
       };
-    } catch (error: any) {
+    } catch (error: unknown) {
       return {
         status: false,
         message: `Error fetching API: ${error.message || error}`,

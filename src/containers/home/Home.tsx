@@ -1,6 +1,5 @@
 import './home.scss'
 import Layout from '../../components/Wrapper/layout/Layout';
-// import Banner from '../../components/badge/Banner';
 import { useHomeContext } from '../../context/homeContext/HomeState';
 import { useEffect, useState } from 'react';
 import Banner from '../../components/badge/Banner';
